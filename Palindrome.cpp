@@ -2,7 +2,7 @@
 #include<math.h>
 int main(){
 	int ent,limit=0,temp,re=0,check=0,ans=0;
-	int parin[1000000]={0};
+	int parin[7]={0};
 	int i,l,k;
 	scanf("%d",&ent);
 	if(ent>=1&&ent<=1000000)
@@ -38,6 +38,7 @@ int main(){
 				for(k=0;k<=limit;k++)
 				{
 					check=check+pow(parin[k],k);
+					
 				}
 				if(i==check)
 				{
@@ -45,8 +46,9 @@ int main(){
 				}
 				check=0;
 			}
+			ans=ans;
+			printf("%d",ans);
 		}
-		printf("%d",ans+9);
 	}
 	return 0;
 }
