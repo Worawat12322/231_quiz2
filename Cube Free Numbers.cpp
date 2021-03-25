@@ -1,22 +1,26 @@
-#include<stdin.h>
+#include<stdio.h>
 int main(){
 	int ent,chk,count=0;
 	int i,l;
 	scanf("%d",&ent);
 	if(ent>=1&&ent<=1000000)
 	{
-		for(i=2;i<ent&&count!=3;i++)
+		for(i=1;i<=ent&&count!=3;i++)
 		{
-			count=0;
 			chk = ent;
-			for(l=1;l<4;l++)
+			for(l=1;l<4&&chk!=0;l++)
 			{
-				if(chk%i==0)
+				if(chk>0)
 				{
-					count++;
-					chk/i;
+					if(chk%i==0)
+					{
+						count++;
+						chk/i;
+					}
 				}
+				else break;
 			}
+			count=0;
 		}
 		if(count==3)
 		{
