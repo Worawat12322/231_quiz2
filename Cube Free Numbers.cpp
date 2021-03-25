@@ -10,7 +10,7 @@ int main(){
 		for(k=2;k<=ent;k++)
 		{
 		
-		for(i=2;i<=k;i++)
+		for(i=2;i<=k/3;i++)
 		{
 			chk = k;
 			for(l=1;l<4;l++)
