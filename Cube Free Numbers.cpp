@@ -7,37 +7,37 @@ int main(){
 	{
 		if(ent>1)
 		{
-		for(k=2;k<=ent;k++)
-		{
-		
-		for(i=2;i<=k/3;i++)
-		{
-			chk = k;
-			for(l=1;l<4;l++)
+			for(k=2;k<=ent;k++)
 			{
-				if(chk>0)
+		
+				for(i=2;i<=k/3;i++)
 				{
-					if(chk%i==0)
+					chk = k;
+					for(l=1;l<4;l++)
 					{
-						count++;
-						chk/=i;
+						if(chk>0)
+						{
+							if(chk%i==0)
+							{
+								count++;
+								chk/=i;
+							}
+						}
 					}
+					if(k==ent&&count==3)
+					{
+						printf("Not Cube Free");
+					 	return 0;
+					}
+					else if(count==3)
+					{
+						lob++;
+						check++;
+					}
+					count=0;
 				}
 			}
-			if(k==ent&&count==3)
-			{
-				printf("Not Cube Free");
-			 	return 0;
-			}
-			else if(count==3)
-			{
-				lob++;
-				check++;
-			}
-			count=0;
-		}
-		}
-		printf("%d",ent-lob);
+			printf("%d",ent-lob);
 		}
 		else printf("1");
 	}
