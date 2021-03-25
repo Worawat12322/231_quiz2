@@ -3,7 +3,7 @@
 int main(){
 	int ent,limit=0,temp,re=0,check=0,ans=0;
 	int parin[7]={0};
-	int i,l,k;
+	int i,l,k,p;
 	scanf("%d",&ent);
 	if(ent>=1&&ent<=1000000)
 	{
@@ -35,9 +35,9 @@ int main(){
 					parin[l]=parin[limit];
 					parin[limit]=re;
 				}
-				for(k=0;k<=limit;k++)
+				for(k=0,p=1;k<=limit&&p<=limit+1;k++,p++)
 				{
-					check=check+pow(parin[k],k);
+					check=check+pow(parin[p],p);
 					
 				}
 				if(i==check)
@@ -46,7 +46,7 @@ int main(){
 				}
 				check=0;
 			}
-			ans=ans;
+			ans=ans+9;
 			printf("%d",ans);
 		}
 	}
