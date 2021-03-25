@@ -1,32 +1,45 @@
 #include<stdio.h>
 int main(){
-	int ent,chk,count=0;
-	int i,l;
+	int ent,chk,count=0,check=0,lob=0;
+	int i,l,k;
 	scanf("%d",&ent);
 	if(ent>=1&&ent<=1000000)
 	{
-		for(i=1;i<=ent&&count!=3;i++)
+		if(ent>1)
 		{
-			chk = ent;
-			for(l=1;l<4&&chk!=0;l++)
+		for(k=2;k<=ent;k++)
+		{
+		
+		for(i=2;i<=k;i++)
+		{
+			chk = k;
+			for(l=1;l<4;l++)
 			{
 				if(chk>0)
 				{
 					if(chk%i==0)
 					{
 						count++;
-						chk/i;
+						chk/=i;
 					}
 				}
-				else break;
+			}
+			if(k==ent&&count==3)
+			{
+				printf("Not Cube Free");
+			 	return 0;
+			}
+			else if(count==3)
+			{
+				lob++;
+				check++;
 			}
 			count=0;
 		}
-		if(count==3)
-		{
-			printf("Not Cube Free");
 		}
-		else printf("%d",ent);
+		printf("%d",ent-lob);
+		}
+		else printf("1");
 	}
 	return 0;
 }
