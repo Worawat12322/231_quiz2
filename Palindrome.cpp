@@ -1,9 +1,9 @@
 #include<stdio.h>
 #include<math.h>
 int main(){
-	int ent,limit=0,temp,re=0;
+	int ent,limit=0,temp,re=0,check=0,ans=0;
 	int parin[1000000]={0};
-	int i,l;
+	int i,l,k;
 	scanf("%d",&ent);
 	if(ent>=1&&ent<=1000000)
 	{
@@ -24,15 +24,29 @@ int main(){
 				{
 					parin[limit]=temp%10;
 					temp/=10;
-					limit++;
+					if(temp!=0)
+					{
+						limit++;
+					}
 				}
 				for(l=0;l<=limit/2;l++)
 				{
 					re=parin[l];
-					parin[l]=parin[]
+					parin[l]=parin[limit];
+					parin[limit]=re;
 				}
+				for(k=0;k<=limit;k++)
+				{
+					check=check+pow(parin[k],k);
+				}
+				if(i==check)
+				{
+					ans++;
+				}
+				check=0;
 			}
 		}
+		printf("%d",ans+9);
 	}
 	return 0;
 }
