@@ -35,9 +35,9 @@ int main(){
 					parin[l]=parin[limit];
 					parin[limit]=re;
 				}
-				for(k=0,p=1;k<=limit&&p<=limit+1;k++,p++)
+				for(k=0;k<=limit;k++)
 				{
-					check=check+pow(parin[k],p);
+					check=check+pow(parin[k],k);
 					
 				}
 				if(i==check)
@@ -48,11 +48,6 @@ int main(){
 			}
 			ans=ans+9;
 			printf("%d",ans);
-			int a;
-			for(a=0;a<=limit;a++)
-			{
-				printf("%d",parin[a]);
-			}
 		}
 	}
 	return 0;
